@@ -1,6 +1,5 @@
 import React from 'react'
-import './testimonials.css'
-
+import {useState, useEffect, useRef, useMemo} from 'react'
 // import Swiper core and required modules
 import {Pagination} from 'swiper';
 
@@ -9,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import './testimonials.css'
 
 const data = [
   {
@@ -32,8 +32,33 @@ const data = [
 ]
 
 const Testimonials = () => {
+  const ref = useRef(null);
+  const isInViewport = useIsInViewport(ref);
+
+  function useIsInViewport({root = null, rootMargin, threshold = 0.4}) {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    
+
+    const observer = useMemo(
+      () =>      
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting), {root, rootMargin, threshold}
+        ),
+      [],
+    );
+  
+    useEffect(() => {
+      observer.observe(ref.current);
+  
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+  
+    return isIntersecting;
+  }
   return (
-    <section id="testimonials" className="ignore">
+    <section ref={ref} id="testimonials" className={"nav " + (isInViewport ? 'visible' : '')}>
       <h5>what they say</h5>
       <h2>TESTIMONIALS</h2>
       <Swiper className="container testimonials__container"
