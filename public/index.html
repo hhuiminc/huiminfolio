@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/bubble.png">
+    <title>Huiminfolio</title>
+</head>
+<body>
+    <div id="root" class="default"></div>
+    <script>
+        window.onload = function() {
+            checkClass();   
+            navAnimationDelay();        
+            
+            var colors = document.querySelectorAll(".color__option");
+
+            colors.forEach((color) => {
+                color.addEventListener('click', () => {
+                    var ColorID = color.id;
+                    var rootDiv = document.getElementById('root');
+                    rootDiv.className = ColorID;
+                });
+            });
+        }
+        window.onscroll  = function() {checkClass()}
+
+        function navAnimationDelay() {
+            if (document.querySelector('.home').classList.contains('active')) {
+                document.querySelector('nav').classList.add('delay');
+            }
+        }
+        function checkClass() {
+            try {
+                var visibleNowClass = document.querySelector('.visible').id;
+                var visibleNow = document.querySelector("." + visibleNowClass);
+                visibleNow.classList.add("active");
+            } catch (err) {}
+
+            var notVisibleIDs = document.querySelectorAll("section:not(.visible):not(.ignore)");
+            
+            notVisibleIDs.forEach(ele => {
+                var eleID = ele.id;
+                var removeClass = document.querySelector("." + eleID);
+                removeClass.classList.remove("active");
+
+            })
+        }
+
+        
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+.container.contact__container {
+    width: 58%;
+    display: grid;
+    grid-template-columns: 30% 58%;
+    gap: 12%;
+}
+
+.contact__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact__options a h5 {
+    font-size: 0.8rem;
+}
+
+.contact__option {
+    background: var(--slate300);
+    padding: 3rem 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.contact__option:hover {
+    background: var(--color-bg);
+    color: var(--color-primary);
+}
+
+.contact__option-icon {
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: var(--transition);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--slate300);
+    resize: none;
+    color: var(--color-primary);
+    font-family: 'Raleway', 'Helvetica';
+    font-weight: 500;
+    transition: var(--transition);
+
+}
+
+/* BEEG */
+@media screen and (min-width: 1601px) {
+    .contact__options {
+        gap: 1.2vw;
+    }
+
+    .contact__options a h5 {
+        font-size: 1vw;
+    }
+
+    .contact__option {
+        padding: 3vw 1.2vw;
+        border-radius: 1.2vw;
+    }
+
+    .contact__option-icon {
+        font-size: 1.5vw;
+    }
+
+    input, textarea, button {
+        font-size: 1vw;
+        padding: 1.5vw;
+        border-radius: 0.5vw;
+    }
+    
+    form {
+        gap: 1.2vw;
+    }
+}
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+    .container.contact__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact__option {
+        padding: 1.2rem;
+    }
+    form {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container.contact__container {
+        width: var(--container-width-md);
+    }
+}
+
+/* PHONES */
+@media screen and (max-width: 650px) {
+    .container.contact__container {
+        width: var(--container-width-sm);
+    }
+}
+
+@media screen and (max-width: 570px) {
+
+}
+
+@media screen and (max-width: 425px) {
+
+}

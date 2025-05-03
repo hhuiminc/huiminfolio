@@ -1,0 +1,72 @@
+.container.testimonials__container {
+    width: 50%;  
+    padding-bottom: 4rem;  
+}
+
+.testimonial {
+    background: var(--color-bg-secondary);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    user-select: none;
+}
+
+.role {
+    text-transform: lowercase;
+    color: var(--slate700t);
+}
+
+.reviewer__review {
+    display: block;
+    width: 80%;
+    margin: 0.8rem auto 0;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    background: var(--color-secondary);
+}
+
+/* BEEG */
+@media screen and (min-width: 1601px) {
+    .container.testimonials__container {
+        padding-bottom: 4vw;  
+    }
+    
+    .testimonial {
+        padding: 2vw;
+        border-radius: 2vw;
+    }
+    
+    .reviewer__review {
+        margin: 0.8vw auto 0;
+    }
+}
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+    .container.testimonials__container {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container.testimonials__container, .reviewer__review {
+        width: var(--container-width-md);
+    }
+}
+
+/* PHONES */
+@media screen and (max-width: 650px) {
+    .container.testimonials__container, .reviewer__review {
+        width: var(--container-width-sm);
+    }
+
+}
+
+@media screen and (max-width: 570px) {
+
+}
+
+@media screen and (max-width: 425px) {
+
+}

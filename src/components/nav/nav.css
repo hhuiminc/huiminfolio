@@ -1,0 +1,126 @@
+nav {
+    background: var(--color-primary-trans);
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: max-content;
+    padding: 1.7rem 0.7rem;    
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(10px);    
+    opacity: 0;
+    animation: appear 3s forwards;
+
+}
+
+nav.delay {
+    animation-delay: var(--screen-2-duration);
+}
+
+nav a {
+    background: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    color: var(--color-extrawhite);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+nav a:hover {
+    background: var(--slate700t);
+    color: var(--color-extrawhite);
+    
+}
+
+/* nav a:hover::before {
+    content: '';
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    font-size: 0.65rem;
+    width: 115%;
+    transform: translateX(-50%);
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: var(--color-white);
+}
+
+nav a.home:hover::before {
+    content: 'home';
+} 
+
+nav a.about:hover::before {
+    content: 'about';
+}
+
+nav a.experience:hover::before {
+    content: 'experience';
+}
+
+nav a.portfolio:hover::before {
+    content: 'portfolio';
+}
+
+nav a.contact:hover::before {
+    content: 'contact';
+} */
+
+nav a.active {
+    background: var(--slate800);
+
+}
+
+/* BEEG */
+@media screen and (min-width: 1601px) {
+
+}
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        padding: 0.7rem 1.7rem;
+
+        top: initial;
+        right: initial;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+}
+
+/* PHONES */
+@media screen and (max-width: 570px) {
+    nav {
+        gap: 0.8rem;
+        bottom: 3%;
+    }
+
+    nav a {
+        font-size: 1.3rem;
+        padding: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    nav {
+        padding: 0.5rem 1.5rem;
+        
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}

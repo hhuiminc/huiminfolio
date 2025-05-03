@@ -1,0 +1,191 @@
+@keyframes shrink {
+    20% {transform: scale(2)}
+    100% {transform: scale(1)}
+}
+
+@keyframes background-fade {
+    0% {background: var(--slate700);}
+    100% {background: none;}
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%;  }
+}
+
+@keyframes typing-vanish {
+    0% { width: 0 }
+    60% { width: 83% }
+    80% { width: 83%; }
+    99% { width: 100%; border-right: .15em solid var(--color-secondary); }
+    100% { width: 100%; border-right: 0; }
+}
+
+@keyframes blinking {
+    from { border-color: transparent }
+    to { border-color: var(--color-secondary); }
+}
+
+@keyframes changetextcolor {
+    from { color: var(--slate300); }
+    to { color: var(--color-primary); }
+}
+
+#tsparticles {
+    animation: appear 10s forwards;
+    animation-delay: var(--screen-2-duration);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+section#home {
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: var(--slate700);
+    animation: background-fade 4s forwards;
+    animation-delay: var(--screen-2-duration);
+}
+
+.header__container {
+    text-align: left;
+    height: 100%;
+    position: relative;
+    padding-top: 0;
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--slate300);
+    animation: changetextcolor 1s forwards;
+    animation-delay: var(--screen-2-duration);
+}
+
+.background-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: var(--color-bg-trans);
+    box-shadow: 0 0 50px 40px var(--color-bg-trans);
+    animation: appear 2s forwards;
+    animation-delay: var(--text-background-delay);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.sub-container {
+    display: inline-block;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--color-secondary);
+    white-space: nowrap; 
+    width: 0;
+}
+
+/* h5 animation */
+.shrink > .typewriter {
+    margin-left: 0.2rem;
+    animation: 
+        typing-vanish var(--typing-r1-duration) steps(40, end) forwards,
+        blinking 0.75s infinite;
+    animation-delay: var(--typing-r1-delay); 
+}
+
+.shrink {
+    animation:
+        shrink 1.5s ease forwards;
+    animation-delay: var(--typing-r1-duration);
+    transform: scale(2);
+    transform-origin: left top;
+}
+
+/* h1 animation */
+.delayed.typewriter {
+    animation: 
+        typing var(--typing-r2-duration) steps(20, end) forwards,
+        blinking 0.75s infinite;
+    animation-delay: var(--typing-r2-delay);    
+}
+
+.appear {
+    opacity: 0;
+    animation: appear 0.1s forwards;
+    animation-delay: var(--typing-r2-delay);
+}
+
+
+/* BEEG */
+@media screen and (min-width: 1601px) {
+
+}
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .header__container {
+        text-align: center;
+    }
+
+    #home h3 {
+        margin-left: 0;
+    }
+
+    #home .shrink {
+        transform-origin: initial;
+    }
+
+    #home .typewriter.delayed {
+        border-left: 0.15em transparent;
+    }
+}
+
+/* PHONES */
+@media screen and (max-width: 650px) {
+    @keyframes shrink {
+        20% {transform: scale(1.5)}
+        100% {transform: scale(1)}
+    }
+
+    #home h1 {
+        font-size: 5rem;
+    }
+
+    #home h3 {
+        font-size: 1.6rem;
+
+    }
+
+    #home .shrink {
+        transform: scale(1.5);
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .wrapper {
+        top: 45%;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    #home h1 {
+        font-size: 17vw;
+    }
+
+    #home h3 {
+        font-size: 6vw;
+
+    }
+}
