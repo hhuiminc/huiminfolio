@@ -1,5 +1,4 @@
 .color__options {
-    /* position: absolute; */
     position: fixed;
     z-index: 2;
     top: 2rem;
@@ -65,4 +64,26 @@
         border: 0.219vw solid var(--color-extrawhite);
 
     }
+}
+
+@media screen and (max-width: 570px) {
+    .color__options {
+        flex-direction: column;
+        overflow-y: hidden;
+        display: block;
+        height: 2.7rem;
+        transition: 500ms ease;
+    }
+
+    .color__option {
+        margin: 0.5rem 0;
+    }
+
+    .color__options:hover {
+        height: 10.8rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
 }

@@ -173,6 +173,10 @@ section#home {
 }
 
 @media screen and (max-width: 570px) {
+    section#home {
+        display: flex;
+    }
+
     .wrapper {
         top: 45%;
     }
