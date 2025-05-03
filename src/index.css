@@ -177,10 +177,10 @@ body {
 section {
     padding: 2.8rem 0;
     position: relative;
-    /* height: 100vh; */
     background: var(--color-bg);
     color: var(--color-primary);
     transition: var(--transition);
+    overflow: hidden;
 }
 
 section.alternate {
