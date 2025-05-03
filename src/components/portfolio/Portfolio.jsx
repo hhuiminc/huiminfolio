@@ -49,7 +49,7 @@ const data = [
           caption: 'contact us page'
         },
     ],
-    briefdesc: 'front-end, back-end cms, whole website',
+    briefdesc: 'whole website + cms',
     focalpoints: [
       'Menu-Like Layout',
       'Animations',
@@ -89,11 +89,11 @@ const data = [
       'Animations',
       'Filters',
     ],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ab veniam nihil, dolore reprehenderit nostrum iure ducimus mollitia repellat optio qui harum alias, cupiditate, autem voluptatem iusto aliquid quidem numquam!',
+    description: 'I did some pages for ITW Singapore, which are shown in the images above, other than the homepage, which I only made some small changes. There are animations in the pages and a filter for the \'our team\' page.',
   },
   {
     title: 'Kao Laundry',
-    link: 'https://www.kaolaundry.com.sg/Flair-Concentrated-Fabric-Conditioner-Fabric-Softener-Fragrance-Singapore-Detergent',
+    link: '',
     folder: 'KaoLaundry',
     images: [
         {
@@ -103,8 +103,10 @@ const data = [
     ],
     briefdesc: 'front-end, single page',
     focalpoints: [
+      'Simple',
+      'Bright'
     ],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ab veniam nihil, dolore reprehenderit nostrum iure ducimus mollitia repellat optio qui harum alias, cupiditate, autem voluptatem iusto aliquid quidem numquam!',
+    description: 'This is a one page front-end landing site for KaoLaundry\'s flair conditioner. Unfortunately, the link is no longer live :(',
   },
   {
     title: 'Aetos',
@@ -120,7 +122,7 @@ const data = [
     focalpoints: [
       'Animations',
     ],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ab veniam nihil, dolore reprehenderit nostrum iure ducimus mollitia repellat optio qui harum alias, cupiditate, autem voluptatem iusto aliquid quidem numquam!',
+    description: 'This is a one page front-end only website for Aetos. It is a landing page that embeds a Youtube video, has some animations, and a contact form that features a captcha check.',
   },
   {
     title: 'Singapore Ability Scales',
@@ -147,7 +149,7 @@ const data = [
     briefdesc: 'front-end, multiple pages',
     focalpoints: [
     ],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ab veniam nihil, dolore reprehenderit nostrum iure ducimus mollitia repellat optio qui harum alias, cupiditate, autem voluptatem iusto aliquid quidem numquam!',
+    description: 'I did a few pages for this website, which are shown in the images above. There are small animations sprinkled around the pages.',
   },
 
   
@@ -229,9 +231,11 @@ const Portfolio = () => {
                       }
                     </ul>   
                   <p className="portfolio__description">{description}</p>
-                  <a href={link} target="_blank">
-                    <button className="btn btn-secondary">VISIT</button>
-                  </a>
+                  {link && (
+                    <a href={link} target="_blank">
+                      <button className="btn btn-secondary">VISIT</button>
+                    </a>
+                  )}
                 </div>
               </SwiperSlide>
               

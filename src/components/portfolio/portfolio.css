@@ -167,8 +167,10 @@
     }
 }
 
-@media screen and (max-width: 1280px) {
-
+@media screen and (max-width: 1370px) {
+    .portfolio__details {
+        margin-top: 1rem;
+    }
 }
 
 /* TABLETS */
