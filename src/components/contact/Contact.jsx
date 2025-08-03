@@ -3,6 +3,7 @@ import {useState, useEffect, useRef, useMemo} from 'react'
 import emailjs from '@emailjs/browser';
 import './contact.css'
 import {MdOutlineEmail} from 'react-icons/md'
+import {FaLinkedin, FaGithub} from 'react-icons/fa'
 
 const Contact = () => {
   const form = useRef();
@@ -57,6 +58,18 @@ const Contact = () => {
       
       <div className="container contact__container">
         <div className="contact__options">
+          <div className="contact__subcontainer">
+            <a href="https://linkedin.com/in/hhuiminc" target='_blank' title='LinkedIn Profile'>
+              <article className="contact__option half">
+                <FaLinkedin className="contact__option-icon"/>
+              </article>          
+            </a>
+            <a href="https://github.com/hhuiminc" target='_blank' title='GitHub Profile'>
+              <article className="contact__option half">
+                <FaGithub className="contact__option-icon"/>
+              </article>          
+            </a>
+          </div>
             <a href="mailto:hhuiminc@gmail.com">
               <article className="contact__option">
                 <MdOutlineEmail className="contact__option-icon"/>
@@ -69,7 +82,7 @@ const Contact = () => {
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
-          <button type="submit" className="btn btn-secondary">Send Message</button>
+          <button type="submit" className="btn btn-secondary">Send Email</button>
         </form>
         
       </div>

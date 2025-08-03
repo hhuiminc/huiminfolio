@@ -15,6 +15,20 @@
     font-size: 0.8rem;
 }
 
+.contact__subcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact__subcontainer > a {
+    display: inline-block;
+    width: 48%;
+}
+
+.contact__option.half {
+    padding: 2rem 1.2rem 1.5rem 1.2rem;
+}
+
 .contact__option {
     background: var(--slate300);
     padding: 3rem 1.2rem;
