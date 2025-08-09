@@ -10,7 +10,7 @@
 <body>
     <div id="root" class="default"></div>
     <script>
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', function() {
             checkClass();   
             navAnimationDelay();        
             
@@ -23,7 +23,8 @@
                     rootDiv.className = ColorID;
                 });
             });
-        }
+        });
+        
         window.onscroll  = function() {checkClass()}
 
         function navAnimationDelay() {

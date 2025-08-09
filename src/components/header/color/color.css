@@ -35,12 +35,12 @@
     background: #39393945;
 }
 
-.color__option#default {
-    background: linear-gradient(135deg, var(--default-bg) 50%, var(--default-primary) 50%);
+.color__option#blue {
+    background: linear-gradient(135deg, var(--blue-bg) 50%, var(--blue-primary) 50%);
 }
 
-.color__option#purple {
-    background: linear-gradient(135deg, var(--purple-bg) 50%, var(--purple-primary) 50%);
+.color__option#default {
+    background: linear-gradient(135deg, var(--default-bg) 50%, var(--default-primary) 50%);
 }
 
 .color__option#green {

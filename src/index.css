@@ -57,7 +57,7 @@
     --text-background-delay: calc(var(--screen-2-duration) + 1.5s);
 }
 
-#root.default {
+#root.blue {
     --slate50: #f8fafc;
     --slate200: #e2e8f0;
     --slate300: #cbd5e1;
@@ -89,7 +89,7 @@
     --slate900: #0F2A28;
 }
 
-#root.purple {
+#root.default {
     --slate50: #F8F8FC;
     --slate200: #E2E4F0;
     --slate300: #CBCEE1;
@@ -149,13 +149,13 @@ body {
     background: var(--color-bg);
     color: var(--color-primary);
 
-    /* default */
-    --default-bg: #b9c4d3;
-    --default-primary: #0f172a;
+    /* blue */
+    --blue-bg: #b9c4d3;
+    --blue-primary: #0f172a;
 
-    /* purple */
-    --purple-bg: #B9BDD3;
-    --purple-primary: #0F132A;
+    /* default */
+    --default-bg: #B9BDD3;
+    --default-primary: #0F132A;
 
     /* green */
     --green-bg: #B9D3D1;

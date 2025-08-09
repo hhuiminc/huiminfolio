@@ -7,7 +7,7 @@ const Color = () => {
     <div className="color__options">
         <div className="color__option" id="default"></div>
         <div className="color__option" id="green"></div>
-        <div className="color__option" id="purple"></div>
+        <div className="color__option" id="blue"></div>
         <div className="color__option" id="bistre"></div>
     </div>
   )
