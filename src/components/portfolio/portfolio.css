@@ -21,7 +21,7 @@
 }
 
 .portfolio__details {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 
 .portfolio__details > h3 {
@@ -37,7 +37,7 @@
 }
 
 .portfolio__image-wrapper::after {
-    top: 5px;
+    top: 0;
     left: 0;
     content: '';
     position: absolute;
@@ -124,7 +124,7 @@
     }
     
     .portfolio__details {
-        margin-top: 2.5vw;
+        margin-top: 1.5vw;
     }
 
     .portfolio__image-wrapper {
@@ -143,6 +143,10 @@
     .portfolio__image-wrapper::-webkit-scrollbar-thumb {
         border-radius: 0.625vw;
         border: 0.438vw solid transparent;
+    }
+
+    .portfolio__video {
+        width: 100%;
     }
     
     .portfolio__image-caption {
@@ -169,7 +173,7 @@
 
 @media screen and (max-width: 1370px) {
     .portfolio__details {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 }
 

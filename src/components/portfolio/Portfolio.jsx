@@ -12,6 +12,34 @@ import './portfolio.css'
 
 const data = [
   {
+    projecttype: 'Personal Project',
+    title: 'Connect 4',
+    link: 'https://connect4-hhuiminc.netlify.app/',
+    folder: 'Connect4',
+    images: [
+        // {
+        //   mp4: 'Connect4_Gameplay',
+        //   caption: 'Gameplay'
+        // },
+        {
+          img: 'Connect4_Light',
+          caption: 'Light Mode'
+        },
+        {
+          img: 'Connect4_Dark',
+          caption: 'Dark Mode'
+        },
+    ],
+    briefdesc: 'local 2-player game',
+    focalpoints: [
+      'Dark/light mode toggle',
+      'Sound effects',
+      'Confetti!',
+    ],
+    description: `This web application was made with Vue.js, where 2 players can play a local game of Connect 4. Check it out for yourself to experience some confetti!`,
+  },
+  {
+    projecttype: 'Internship - Elves Lab',
     title: 'Tanyu Skyline Catering',
     link: 'http://www.scgroup.com.sg',
     folder: 'Tanyu',
@@ -59,6 +87,7 @@ const data = [
     There are many on-scroll animations! Take a look to see how they go :) `,
   },
   {
+    projecttype: 'Internship - Elves Lab',
     title: 'ITW Singapore',
     link: 'https://sea.itwwelding.com/Home',
     folder: 'ITW',
@@ -92,39 +121,7 @@ const data = [
     description: 'I did some pages for ITW Singapore, which are shown in the images above, other than the homepage, which I only made some small changes. There are animations in the pages and a filter for the \'our team\' page.',
   },
   {
-    title: 'Kao Laundry',
-    link: '',
-    folder: 'KaoLaundry',
-    images: [
-        {
-          img: 'KaoLaundry_FlairConditioner',
-          caption: 'KaoLaundry Flair Conditioner'
-        },
-    ],
-    briefdesc: 'front-end, single page',
-    focalpoints: [
-      'Simple',
-      'Bright'
-    ],
-    description: 'This is a one page front-end landing site for KaoLaundry\'s flair conditioner. Unfortunately, the link is no longer live :(',
-  },
-  {
-    title: 'Aetos',
-    link: 'https://www.aetos.com.sg/landing2.aspx',
-    folder: 'Aetos',
-    images: [
-        {
-          img: 'Aetos_Main',
-          caption: 'landing page'
-        },
-    ],
-    briefdesc: 'front-end, back-end, single page',
-    focalpoints: [
-      'Animations',
-    ],
-    description: 'This is a one page front-end only website for Aetos. It is a landing page that embeds a Youtube video, has some animations, and a contact form that features a captcha check.',
-  },
-  {
+    projecttype: 'Internship - Elves Lab',
     title: 'Singapore Ability Scales',
     link: 'https://www.singaporeabilityscales.sg/',
     folder: 'SAS',
@@ -150,6 +147,41 @@ const data = [
     focalpoints: [
     ],
     description: 'I did a few pages for this website, which are shown in the images above. There are small animations sprinkled around the pages.',
+  },
+  {
+    projecttype: 'Internship - Elves Lab',
+    title: 'Kao Laundry',
+    link: '',
+    folder: 'KaoLaundry',
+    images: [
+        {
+          img: 'KaoLaundry_FlairConditioner',
+          caption: 'KaoLaundry Flair Conditioner'
+        },
+    ],
+    briefdesc: 'front-end, single page',
+    focalpoints: [
+      'Simple',
+      'Bright'
+    ],
+    description: 'This is a one page front-end landing site for KaoLaundry\'s flair conditioner. Unfortunately, the link is no longer live :(',
+  },
+  {
+    projecttype: 'Internship - Elves Lab',
+    title: 'Aetos',
+    link: 'https://www.aetos.com.sg/landing2.aspx',
+    folder: 'Aetos',
+    images: [
+        {
+          img: 'Aetos_Main',
+          caption: 'landing page'
+        },
+    ],
+    briefdesc: 'front-end, back-end, single page',
+    focalpoints: [
+      'Animations',
+    ],
+    description: 'This is a one page front-end only website for Aetos. It is a landing page that embeds a Youtube video, has some animations, and a contact form that features a captcha check.',
   },
 
   
@@ -192,7 +224,7 @@ const Portfolio = () => {
       pagination={{ clickable: true }}>
 
         {
-          data.map(({title, link, folder, images, briefdesc, focalpoints, description}, index) => {
+          data.map(({projecttype, title, link, folder, images, briefdesc, focalpoints, description}, index) => {
             return (
               <SwiperSlide key={index} className="portfolio__item">
                 <Swiper className="portfolio__images"
@@ -203,8 +235,13 @@ const Portfolio = () => {
                     {images.map(image => {
                       let imagePath;
                       try {
-                        imagePath = require('../../assets/portfolio/' + folder + '/' + image.img + '.png');
-
+                        if (image.img) {
+                          imagePath = require('../../assets/portfolio/' + folder + '/' + image.img + '.png');
+                        } else if (image.gif) {
+                          imagePath = require('../../assets/portfolio/' + folder + '/' + image.gif + '.gif');
+                        } else if (image.mp4) {
+                          imagePath = require('../../assets/portfolio/' + folder + '/' + image.mp4 + '.mp4');
+                        }
                       } catch {
                         imagePath = '../../assets/portfolio/default.png';
                       }
@@ -212,7 +249,14 @@ const Portfolio = () => {
                         <SwiperSlide className="portfolio__image-container">
                           <small className="portfolio__image-caption">{image.caption}</small>
                           <div className="portfolio__image-wrapper">
-                            <img src={imagePath} alt={image.caption} className="portfolio__image" />
+                            {image.img && (
+                              <img src={imagePath} alt={image.caption} className="portfolio__image" />
+                            )}
+                            {image.mp4 && (
+                              <video controls autoplay alt={image.caption} className="portfolio__video">
+                                <source src={imagePath} type="video/mp4"></source>
+                              </video>
+                            )}
                           </div>
                         </SwiperSlide>
                         )
@@ -220,6 +264,7 @@ const Portfolio = () => {
                     }
                 </Swiper>
                 <div className="portfolio__details">
+                  <h5 className="text-light">{projecttype}</h5>
                   <h3>{title}</h3>
                   <h6>{briefdesc}</h6>
                     <ul className="portfolio__focalpoints">
@@ -232,7 +277,7 @@ const Portfolio = () => {
                     </ul>   
                   <p className="portfolio__description">{description}</p>
                   {link && (
-                    <a href={link} target="_blank">
+                    <a href={link} target="_blank" rel="noreferrer">
                       <button className="btn btn-secondary">VISIT</button>
                     </a>
                   )}
