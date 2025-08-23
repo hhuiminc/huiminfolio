@@ -12,33 +12,6 @@ import './portfolio.css'
 
 const data = [
   {
-    projecttype: 'Personal Project',
-    title: 'Connect 4',
-    link: 'https://connect4-hhuiminc.netlify.app/',
-    folder: 'Connect4',
-    images: [
-        // {
-        //   mp4: 'Connect4_Gameplay',
-        //   caption: 'Gameplay'
-        // },
-        {
-          img: 'Connect4_Light',
-          caption: 'Light Mode'
-        },
-        {
-          img: 'Connect4_Dark',
-          caption: 'Dark Mode'
-        },
-    ],
-    briefdesc: 'local 2-player game',
-    focalpoints: [
-      'Dark/light mode toggle',
-      'Sound effects',
-      'Confetti!',
-    ],
-    description: `This web application was made with Vue.js, where 2 players can play a local game of Connect 4. Check it out for yourself to experience some confetti!`,
-  },
-  {
     projecttype: 'Internship - Elves Lab',
     title: 'Tanyu Skyline Catering',
     link: 'http://www.scgroup.com.sg',
@@ -85,6 +58,33 @@ const data = [
     ],
     description: `This is a solo project I did for a restaurant called Tanyu. It has a menu-like layout, where the menu is divided into tabs on the homepage. Each menu tab has carousels that cycle through images of the different menu items!
     There are many on-scroll animations! Take a look to see how they go :) `,
+  },
+  {
+    projecttype: 'Personal Project',
+    title: 'Connect 4',
+    link: 'https://connect4-hhuiminc.netlify.app/',
+    folder: 'Connect4',
+    images: [
+        // {
+        //   mp4: 'Connect4_Gameplay',
+        //   caption: 'Gameplay'
+        // },
+        {
+          img: 'Connect4_Light',
+          caption: 'Light Mode'
+        },
+        {
+          img: 'Connect4_Dark',
+          caption: 'Dark Mode'
+        },
+    ],
+    briefdesc: 'local 2-player game',
+    focalpoints: [
+      'Dark/light mode toggle',
+      'Sound effects',
+      'Confetti!',
+    ],
+    description: `This web application was made with Vue.js, where 2 players can play a local game of Connect 4. Check it out for yourself to experience some confetti!`,
   },
   {
     projecttype: 'Internship - Elves Lab',
