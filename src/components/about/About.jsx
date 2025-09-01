@@ -217,7 +217,7 @@ const About = () => {
                         <p>I used to attend art classes at the community centre when I was a kid, such as painting, drawing, oil pastels and pottery. That made me interested in various mediums of art!<br/><br/>
                           
                           <h6 className="detail__header">Crocheting
-                              <a href="https://instagram.com/rainyterris.crochet" target='_blank' className="detail__link"><RiInstagramLine className="detail__icon"></RiInstagramLine>@rainyterris.crochet
+                              <a href="https://instagram.com/rainyterris.crochet" target='_blank' rel='noreferrer' className="detail__link"><RiInstagramLine className="detail__icon"></RiInstagramLine>@rainyterris.crochet
                               </a>
                           </h6>
                           <p>                          

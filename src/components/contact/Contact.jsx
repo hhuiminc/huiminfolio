@@ -11,7 +11,7 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_fa916kz', 'template_ht9i4le', form.current, 'lNnPWEdJQM-yhzSyW')
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUB_KEY)
       .then((result) => {
         console.log(result.text);
         alert("Your message has been sent.");

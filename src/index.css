@@ -290,6 +290,14 @@ img {
     object-fit: cover;
 }
 
+.swiper-slide:hover {
+    cursor: grab;
+}
+
+.swiper-slide:active {
+    cursor: grabbing;
+}
+
 /* BEEG */
 @media screen and (min-width: 1601px) {
     h1 {
